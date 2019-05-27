@@ -1,0 +1,8 @@
+https://www.youtube.com/watch?v=M2JY1_Xmokg
+
+[invadir site]
+https://www.youtube.com/watch?v=tSSoMDorAQ0
+http://www.boqueiraodoleao.rs.gov.br/php/secretarias.php?s=16
+
+[metaexploit]
+https://brunoizidorio.com.br/infosec-invadindo-o-windows-usando-o-metasploit/
