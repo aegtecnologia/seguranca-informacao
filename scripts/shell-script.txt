@@ -1,0 +1,29 @@
+################ shell script #############################
+extenção: .sh
+
+comandos:
+ls -la => lista arquivos apresentando permissao (verde claro significa de execução).
+chmod a+x meuscript.sh => define permissao de execução no arquivo
+
+sintaxi do arquivo .sh
+
+###### bang ##########
+#!/bin/bash => este é o bang, o "bash" é o shell a ser utilizado
+
+
+################### exemplo #############################
+
+#!/bin/bash
+# scrip para detectar portas na rede
+
+clear
+echo -n "Qual a rede?"
+read rede
+echo -n "Qual a porta?"
+read porta
+
+echo Procuranto host na rede #rede com a porta $porta ...
+echo .
+nmap -sS -vv -p $porta $rede | grep "discovered open port" | awk '{print $6}'
+
+
