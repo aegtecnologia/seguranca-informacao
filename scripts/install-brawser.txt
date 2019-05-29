@@ -1,0 +1,10 @@
+sudo apt-get update
+sudo apt-get upgrade
+wget https://ftp.mozilla.org/pub/firefox/releases/62.0/linux-i686/en-US/firefox-62.0.tar.bz2
+sudo tar -xjf firefox-62.0.tar.bz2
+sudo rm -rf /opt/firefox61
+sudo mv firefox /opt/firefox62
+sudo mv /usr/bin/firefox /usr/bin/firefoxold
+sudo ln -s /opt/firefox62/firefox-bin /usr/bin/firefox
+
+fonte: https://sempreupdate.com.br/como-instalar-o-firefox-62-no-ubuntu-debian-fedora-e-derivados/

