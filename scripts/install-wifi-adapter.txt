@@ -1,1 +1,16 @@
 https://www.youtube.com/watch?v=xwQtyE91Fp8
+
+############## outro ##################
+https://superuser.com/questions/998112/installing-wifi-drivers-on-a-kali-linux-laptop
+
+Primeiro driver de download compat-wireless-2.6.30.tar.bz2 .
+
+tar -xf compat-wireless-2.6.30.tar.bz2
+cd compat-wireless-2.6.30
+make
+sudo make install
+sudo make unload
+
+Em seguida, reinicie o sistema operacional e instale wicd para ver se ele reconhece o adaptador wi-fi
+
+apt-get install wicd

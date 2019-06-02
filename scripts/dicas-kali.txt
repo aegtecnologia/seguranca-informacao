@@ -23,3 +23,6 @@ https://hstspreload.org/?domain=www.brasilrisk.com.br
 rtl sdr
 https://sites.google.com/view/gsmraptor/home
 https://www.youtube.com/watch?v=LT_a-pZ_OYk
+
+[change mac]
+https://www.youtube.com/watch?v=bshXz5r-CQA
