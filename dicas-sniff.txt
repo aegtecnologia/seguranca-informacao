@@ -1,0 +1,18 @@
+[sniffer http com ettercap]
+abrir o Ettercap;
+menu >> Sniff >> Unifield Sniffing;
+Escolher interface de rede
+menu >> Hosts >> scan for hosts
+menu >> Hosts >> Host List
+Seleciona ip do roteador e click em add to target 1
+Seleciona ip da fitima e click em add to target 2
+menu >> Mitm >> ARP Poisoning >> check in Sniff remote connections
+menu >> Start >> Start Sniffing
+menus >> Start >> Stop Sniffing
+obs: arp -a no windows da vitima confirma alteracao da arp.
+
+[capturar dados com wireshark]
+no terminal digitar wiresshark;
+escolher a interface de rede;
+filtrar: http.request.method == "POST"
+
