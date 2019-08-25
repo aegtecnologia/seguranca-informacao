@@ -1,3 +1,15 @@
 [buscar scripts nmap]
 locate *.nse
 
+[buscar portas e SO do alvo]
+nmap -sV -O 192.168.15.8
+
+[buscar scripts nse]
+locate *.nse
+locate *vuln*.nse
+
+[verifica vulnerabilidade por script]
+nmap -v -p 445 --script smb-vuln-ms17-010 192.168.15.8
+
+[atualiza scripts do nmap]
+nmap --script-updadedb
